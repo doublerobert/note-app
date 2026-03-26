@@ -1,0 +1,28 @@
+### 
+
+# @name Create Note
+
+POST http://localhost:5000/api/notes HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "text": "Check out kulala.nvim and also posting ",
+  "title": "My third note from kulala"
+}
+
+
+### 
+
+# @name Get All Notes
+
+GET http://localhost:5000/api/notes HTTP/1.1
+Accept: application/json
+
+
+### 
+
+# @name Get Note by ID
+
+GET http://localhost:5000/api/notes/69bfc1cbf72acf2ac21635d3 HTTP/1.1
+Accept: application/json
