@@ -23,8 +23,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "text": "Check out kulala.nvim and also posting ",
-  "title": "My third note from kulala"
+  "text": "This is line 1\nThis is line 2\n\n\nThis is line 5\nThis is line 6\nThis is line 7\n",
+  "title": "Note with many lines"
 }
 
 
@@ -32,13 +32,13 @@ Content-Type: application/json
 
 # @name Update Note by ID
 
-PATCH http://localhost:5000/api/notes/69c44c2fb1b5de2d46f688dd HTTP/1.1
+PATCH http://localhost:5000/api/notes/69bfc084f72acf2ac21635d2 HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 
 {
-  "text": "Check out kulala.nvim and this is the updated version ",
-  "title": "My first note from kulala"
+  "text": "Check out my next app and now behold it is updated",
+  "title": "My first note"
 }
 
 
@@ -46,5 +46,5 @@ Content-Type: application/json
 
 # @name Delete Note by ID
 
-DELETE http://localhost:5000/api/notes/69c51d313a7f4a660480b3e0 HTTP/1.1
+DELETE http://localhost:5000/api/notes/69c7fb5a9524bbf79b8f92db HTTP/1.1
 Accept: application/json
