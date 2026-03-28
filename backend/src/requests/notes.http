@@ -1,5 +1,21 @@
 ### 
 
+# @name Get All Notes
+
+GET http://localhost:5000/api/notes HTTP/1.1
+Accept: application/json
+
+
+### 
+
+# @name Get Note by ID
+
+GET http://localhost:5000/api/notes/69bfc1cbf72acf2ac21635d3 HTTP/1.1
+Accept: application/json
+
+
+### 
+
 # @name Create Note
 
 POST http://localhost:5000/api/notes HTTP/1.1
@@ -14,15 +30,21 @@ Content-Type: application/json
 
 ### 
 
-# @name Get All Notes
+# @name Update Note by ID
 
-GET http://localhost:5000/api/notes HTTP/1.1
+PATCH http://localhost:5000/api/notes/69c44c2fb1b5de2d46f688dd HTTP/1.1
 Accept: application/json
+Content-Type: application/json
+
+{
+  "text": "Check out kulala.nvim and this is the updated version ",
+  "title": "My first note from kulala"
+}
 
 
 ### 
 
-# @name Get Note by ID
+# @name Delete Note by ID
 
-GET http://localhost:5000/api/notes/69bfc1cbf72acf2ac21635d3 HTTP/1.1
+DELETE http://localhost:5000/api/notes/69c51d313a7f4a660480b3e0 HTTP/1.1
 Accept: application/json
