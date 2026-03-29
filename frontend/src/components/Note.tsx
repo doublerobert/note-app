@@ -13,7 +13,13 @@ const Note = ({ note, className }: NoteProps) => {
 
   let createdUpdatedText: string;
 
-  if (updatedAt > createdAt) {
+  if (!createdAt && !updatedAt) {
+    createdUpdatedText = "No date available";
+  } else if (!createdAt) {
+    createdUpdatedText = `Updated: ${formatDate(updatedAt)}`;
+  } else if (!updatedAt) {
+    createdUpdatedText = `Created: ${formatDate(createdAt)}`;
+  } else if (updatedAt > createdAt) {
     createdUpdatedText = `Updated: ${formatDate(updatedAt)}`;
   } else {
     createdUpdatedText = `Created: ${formatDate(createdAt)}`;
