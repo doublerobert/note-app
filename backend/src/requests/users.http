@@ -1,0 +1,44 @@
+### 
+
+# @name SignUp
+
+POST http://localhost:5000/api/users/signup HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "machine@gmail.com",
+  "password": "secretMachine",
+  "username": "onemachine"
+}
+
+
+### 
+
+# @name Login
+
+POST http://localhost:5000/api/users/login HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "password": "secretMachine",
+  "username": "onemachine"
+}
+
+
+### 
+
+# @name Get User Details
+
+GET http://localhost:5000/api/users/ HTTP/1.1
+Accept: application/json
+Cookie: connect.sid=s%3Agq6yQ88H3eQR0fjNmFHcQRVOycfAHovT.kZQPlAYu4tXr4ziasp5RS2mAvxHQWmGk%2B8f6uDwfjbM;
+
+
+### 
+
+# @name Logout
+
+POST http://localhost:5000/api/users/logout HTTP/1.1
+Cookie: connect.sid=s%3Agq6yQ88H3eQR0fjNmFHcQRVOycfAHovT.kZQPlAYu4tXr4ziasp5RS2mAvxHQWmGk%2B8f6uDwfjbM;
