@@ -1,20 +1,25 @@
+"use client";
 import { useEffect, useState } from "react";
-import { Note as NoteModel } from "./models/note";
-import Note from "./components/Note";
+import { Note as NoteModel } from "@/models/note";
+import Note from "@/components/Note";
 import { Button, Col, Container, Row, Spinner } from "react-bootstrap";
-import styles from "./styles/NotePage.module.css";
-import styleUtils from "./styles/utils.module.css";
-import * as NotesApi from "./network/notes_api";
-import AddEditNoteDialog from "./components/AddEditNoteDialog";
+import styles from "@/styles/NotePage.module.css";
+import styleUtils from "@/styles/utils.module.css";
+import * as NotesApi from "@/network/notes_api";
+import AddEditNoteDialog from "@/components/AddEditNoteDialog";
 import { FaPlus } from "react-icons/fa";
+import SignUpModal from "./SignUpModal";
+import LoginModal from "./LoginModal";
 
-function App() {
+function NoteApp() {
   const [notes, setNotes] = useState<NoteModel[]>([]);
 
   const [notesLoading, setNotesLoading] = useState(true);
   const [showNotesLoadingError, setShowNotesLoadingError] = useState(false);
 
   const [showAddNoteDialog, setShowAddNoteDialog] = useState(false);
+  const [showSignUpDialog, setShowSignUpDialog] = useState(false);
+  const [showLoginDialog, setShowLoginDialog] = useState(false);
 
   const [noteToEdit, setNoteToEdit] = useState<NoteModel | null>(null);
 
@@ -31,6 +36,8 @@ function App() {
         setNotesLoading(false);
       }
     }
+    // setShowSignUpDialog(true);
+    // setShowLoginDialog(true);
     loadNotes();
   }, []);
 
@@ -102,8 +109,20 @@ function App() {
           }}
         />
       )}
+      {showSignUpDialog && (
+        <SignUpModal
+          onDismiss={() => setShowSignUpDialog(false)}
+          onSignUpSuccessful={() => {}}
+        />
+      )}
+      {showLoginDialog && (
+        <LoginModal
+          onDismiss={() => setShowLoginDialog(false)}
+          onLoginSuccessful={() => {}}
+        />
+      )}
     </Container>
   );
 }
 
-export default App;
+export default NoteApp;

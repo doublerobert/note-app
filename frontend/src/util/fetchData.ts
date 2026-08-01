@@ -1,5 +1,7 @@
+const API_URL = "http://localhost:5000";
+
 export async function fetchData(input: RequestInfo, init?: RequestInit) {
-  const response = await fetch(input, init);
+  const response = await fetch(`${API_URL}${input}`, init);
   if (response.ok) {
     return response;
   } else {

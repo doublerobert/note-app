@@ -1,17 +1,14 @@
-import {
-  FieldErrors,
-  Form,
-  RegisterOptions,
-  UseFormRegister,
-} from "react-hook-form";
+import { FieldError, RegisterOptions, UseFormRegister } from "react-hook-form";
+import { Form } from "react-bootstrap";
+import { ComponentProps } from "react";
 
-interface TextInputFieldProps {
+interface TextInputFieldProps extends ComponentProps<typeof Form.Control> {
   name: string;
   label: string;
   register: UseFormRegister<any>;
   registerOptions?: RegisterOptions;
-  error?: FieldErrors;
-  [x: string]: any;
+  error?: FieldError;
+  // [x: string]: any;
 }
 
 const TextInputField = ({
@@ -25,11 +22,10 @@ const TextInputField = ({
   return (
     <Form.Group className="mb-3" controlId={name + "-input"}>
       <Form.Label>{label}</Form.Label>
-      <Form.Control 
+      <Form.Control
         {...props}
         {...register(name, registerOptions)}
         isInvalid={!!error}
-
       />
       <Form.Control.Feedback type="invalid">
         {error?.message}

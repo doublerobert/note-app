@@ -1,6 +1,8 @@
 import { Note } from "../models/note";
 import { fetchData } from "../util/fetchData";
 
+export const API_URL = "http://localhost:5000";
+
 export async function fetchNotes(): Promise<Note[]> {
   const response = await fetchData("/api/notes", {
     method: "GET",

@@ -56,21 +56,31 @@ const AddEditNoteDialog = ({
             placeholder="Title"
             register={register}
             registerOptions={{ required: "Required" }}
+            error={errors?.title}
           />
-          {/* <Form.Group className="mb-3"> */}
-          {/*   <Form.Label>Title</Form.Label> */}
-          {/*   <Form.Control */}
-          {/*     type="text" */}
-          {/*     placeholder="Title" */}
-          {/*     isInvalid={!!errors.title} */}
-          {/*     {...register("title", { required: "Required" })} */}
-          {/*   /> */}
-          {/*   <Form.Control.Feedback type="invalid"> */}
-          {/*     {errors.title?.message} */}
-          {/*   </Form.Control.Feedback> */}
-          {/* </Form.Group> */}
+          {/* <Form.Group className="mb-3">
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Title"
+              isInvalid={!!errors.title}
+              {...register("title", { required: "Required" })}
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.title?.message}
+            </Form.Control.Feedback>
+          </Form.Group> */}
 
-          <Form.Group className="mb-3">
+          <TextInputField
+            name="text"
+            as="textarea"
+            rows={5}
+            placeholder="Text"
+            register={register}
+            label="Text"
+          />
+
+          {/* <Form.Group className="mb-3">
             <Form.Label>Text</Form.Label>
             <Form.Control
               as="textarea"
@@ -78,7 +88,7 @@ const AddEditNoteDialog = ({
               placeholder="Text"
               {...register("text")}
             />
-          </Form.Group>
+          </Form.Group> */}
         </Form>
       </Modal.Body>
 

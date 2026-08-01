@@ -1,5 +1,5 @@
-import { model, Schema } from "mongoose";
-import type { InferSchemaType } from "mongoose";
+import { model, Schema } from 'mongoose';
+import type { InferSchemaType } from 'mongoose';
 
 const noteSchema = new Schema(
   {
@@ -9,9 +9,9 @@ const noteSchema = new Schema(
     },
     text: { type: String },
   },
-  { timestamps:     true },
+  { timestamps: true },
 );
 
 type Note = InferSchemaType<typeof noteSchema>;
 
-export default model<Note>("Note", noteSchema);
+export default model<Note>('Note', noteSchema);
